@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <script>
-(function() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-  function goStore() {
-    if (/android/i.test(userAgent)) {
-      // TODO: EkipMed Android Linki buraya gelecek
-      window.location.replace("https://play.google.com/store/apps/details?id=com.buyumevegelisme.asistan");
-    } else if (/iPhone|iPad|iPod/.test(userAgent)) {
-      // TODO: EkipMed iOS Linki buraya gelecek
-      window.location.replace("https://apps.apple.com/tr/app/id6479564442");
-    }
-  }
-
-  // 0.5 saniye sonra çalış
-  setTimeout(goStore, 500);
-})();
-</script>
   <meta charset="UTF-8" />
   <title>EkipMed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
@@ -39,7 +21,6 @@
       width: 100%;
       min-height: 100%;
       overflow-x: hidden;
-      /* Mavi ve turuncu dokunuşlu, temiz beyaz/açık gri arka plan */
       background: linear-gradient(135deg, #f4f7f6 0%, #e9f0f8 50%, #fff3e0 100%);
       font-family: 'Inter', sans-serif;
       display: flex;
@@ -54,7 +35,7 @@
       z-index: 0;
       display: flex;
       align-items: center;
-      opacity: 0.4; /* Beyaz tema üzerinde görsellerin çok göz yormaması için opacity düşürüldü */
+      opacity: 0.4; 
       pointer-events: none;
     }
 
@@ -68,7 +49,8 @@
     .marquee-inner {
       display: flex;
       width: max-content;
-      animation: scroll 60s linear infinite;
+      /* Animasyon süresi görsellerin akış hızını belirler */
+      animation: scroll 40s linear infinite;
     }
 
     .bg-images img {
@@ -80,16 +62,17 @@
       flex-shrink: 0;
     }
 
+    /* Kusursuz döngü için 2 set görselin tam ortasında başa sarıyoruz */
     @keyframes scroll {
       0% { transform: translateX(0); }
-      100% { transform: translateX(-33.333%); }
+      100% { transform: translateX(-50%); }
     }
 
     .top-title {
       margin-top: 20px;
       font-size: 14px;
       font-weight: 700;
-      color: #0d47a1; /* Medikal Mavi */
+      color: #0d47a1; 
       cursor: pointer;
       z-index: 20;
       text-align: center;
@@ -137,7 +120,7 @@
       font-size: 32px;
       font-weight: 700;
       margin-bottom: 2px;
-      color: #0d47a1; /* Medikal Mavi */
+      color: #0d47a1; 
     }
 
     .tagline {
@@ -149,7 +132,7 @@
     }
 
     .highlight {
-      color: #e65100; /* Canlı Turuncu */
+      color: #e65100; 
       font-weight: 700;
     }
 
@@ -181,7 +164,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #0d47a1; /* Mavi Buton */
+      background-color: #0d47a1; 
       color: #ffffff;
       border: none;
       box-shadow: 0 4px 15px rgba(13, 71, 161, 0.2);
@@ -193,7 +176,6 @@
       box-shadow: 0 6px 20px rgba(13, 71, 161, 0.3);
     }
 
-    /* İkinci butonun turuncu olması için alternatif stil */
     .store-btn.orange-btn {
       background-color: #e65100;
       box-shadow: 0 4px 15px rgba(230, 81, 0, 0.2);
@@ -267,20 +249,20 @@
     gtag('js', new Date());
     gtag('config', 'G-Y24DC6RP3C');
   </script>
+  
   <script>
-function redirectToStore() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  function redirectToStore() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-  if (/android/i.test(userAgent)) {
-    window.location.href = "https://play.google.com/store/apps/details?id=com.buyumevegelisme.asistan";
-  } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    window.location.href = "https://apps.apple.com/tr/app/id6479564442";
-  } else {
-    // masaüstü fallback - Kendi alan adınıza yönlendirecek
-    window.location.href = "https://ekipmed.net";
+    if (/android/i.test(userAgent)) {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.buyumevegelisme.asistan";
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      window.location.href = "https://apps.apple.com/tr/app/id6479564442";
+    } else {
+      window.location.href = "https://ekipmed.net";
+    }
   }
-}
-</script>
+  </script>
 </head>
 
 <body>
@@ -292,9 +274,18 @@ EkipMed sağlık profesyonelleri için neler yapabilir? ✨
 <div class="bg-container bg-images">
   <div class="bg-row">
     <div class="marquee-inner">
-      <img src="https://i.hizliresim.com/34pqxpp.png"><img src="https://i.hizliresim.com/24c1sks.png"><img src="https://i.hizliresim.com/qx0l6v0.png"><img src="https://i.hizliresim.com/evf11b9.png"><img src="https://i.hizliresim.com/ot7ae2o.png"><img src="https://i.hizliresim.com/1jh62v1.png">
-      <img src="https://i.hizliresim.com/34pqxpp.png"><img src="https://i.hizliresim.com/24c1sks.png"><img src="https://i.hizliresim.com/qx0l6v0.png"><img src="https://i.hizliresim.com/evf11b9.png"><img src="https://i.hizliresim.com/ot7ae2o.png"><img src="https://i.hizliresim.com/1jh62v1.png">
-      <img src="https://i.hizliresim.com/34pqxpp.png"><img src="https://i.hizliresim.com/24c1sks.png"><img src="https://i.hizliresim.com/qx0l6v0.png"><img src="https://i.hizliresim.com/evf11b9.png"><img src="https://i.hizliresim.com/ot7ae2o.png"><img src="https://i.hizliresim.com/1jh62v1.png">
+      <img src="https://i.hizliresim.com/34pqxpp.png">
+      <img src="https://i.hizliresim.com/24c1sks.png">
+      <img src="https://i.hizliresim.com/qx0l6v0.png">
+      <img src="https://i.hizliresim.com/evf11b9.png">
+      <img src="https://i.hizliresim.com/ot7ae2o.png">
+      <img src="https://i.hizliresim.com/1jh62v1.png">
+      <img src="https://i.hizliresim.com/34pqxpp.png">
+      <img src="https://i.hizliresim.com/24c1sks.png">
+      <img src="https://i.hizliresim.com/qx0l6v0.png">
+      <img src="https://i.hizliresim.com/evf11b9.png">
+      <img src="https://i.hizliresim.com/ot7ae2o.png">
+      <img src="https://i.hizliresim.com/1jh62v1.png">
     </div>
   </div>
 </div>
@@ -307,7 +298,7 @@ EkipMed sağlık profesyonelleri için neler yapabilir? ✨
         <h1 class="app-name">EkipMed</h1>
         
         <p class="tagline">
-            Sağlık çalışanları için en gelişmiş asistan uygulaması. <br>
+            Sağlık profesyonelleri için geliştirildi. <br>
             <span class="highlight">Üstelik tamamen ücretsiz! 🩺</span>
         </p>
         <nav class="subtitle">
@@ -316,8 +307,8 @@ EkipMed sağlık profesyonelleri için neler yapabilir? ✨
     </div>
 
     <div class="button-group">
-      <a href="https://play.google.com/store/apps/details?id=com.buyumevegelisme.asistan" target="_blank" class="store-btn">Android için indir</a>
-      <a href="https://apps.apple.com/tr/app/id6479564442" target="_blank" class="store-btn orange-btn">iOS için indir</a>
+      <a href="#" onclick="redirectToStore()" class="store-btn">Android için indir</a>
+      <a href="#" onclick="redirectToStore()" class="store-btn orange-btn">iOS için indir</a>
     </div>
 
     <a href="#" onclick="redirectToStore()">
@@ -334,7 +325,6 @@ EkipMed sağlık profesyonelleri için neler yapabilir? ✨
 <div class="disclaimer">
 Bu sitede ve uygulamada yer alan araçlar sağlık çalışanlarına asistanlık etmek amacıyla geliştirilmiştir. Klinik kararlarda resmi protokolleri esas alınız.
 <a href="https://lavliapp.com/privacy/" target="_blank" class="privacy-link">Gizlilik Politikası</a>
-
 </div>
 
 <div id="featureModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:100; align-items:center; justify-content:center; backdrop-filter: blur(3px);">
@@ -362,42 +352,6 @@ function openDialog() {
 function closeDialog() {
   document.getElementById('featureModal').style.display = 'none';
 }
-</script>
-
-<div id="appRedirectOverlay" style="display:none; position:fixed; inset:0; background:rgba(13,71,161,0.4); z-index:9999; align-items:center; justify-content:center; backdrop-filter: blur(5px);">
-  <div style="background:#fff; padding:30px 25px; border-radius:28px; width:85%; max-width:340px; text-align:center; box-shadow:0 20px 60px rgba(13,71,161,0.2);">
-    <img src="https://i.hizliresim.com/7hkw84p.png" style="width:70px; height:70px; border-radius:18px; margin-bottom:15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" />
-    <h3 style="margin:0 0 8px; font-size:18px; font-weight:700; color:#0d47a1;">Mobil uygulamamıza<br>yönlendiriliyorsunuz</h3>
-    <p style="font-size:13px; color:#666; margin:0 0 18px;">EkipMed uygulamasına yönlendiriliyorsunuz... 🩺</p>
-    <a href="#" onclick="redirectToStore()" 
-       style="display:block; padding:14px; background:linear-gradient(135deg,#0d47a1,#e65100); color:#fff; font-weight:700; font-size:15px; border-radius:14px; text-decoration:none; margin-bottom:10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-   Uygulamayı İndir
-</a>
-    <button id="stayBtn" style="background:none; border:none; color:#999; font-size:13px; cursor:pointer; padding:5px; font-weight: 500;">
-      Hayır, sitede kal
-    </button>
-  </div>
-</div>
-
-<script>
-(function() {
-  var redirectTimer;
-
-  // 5 saniye sonra popup aç, ardından 2 saniyede yönlendir
-  setTimeout(function() {
-    document.getElementById('appRedirectOverlay').style.display = 'flex';
-
-    redirectTimer = setTimeout(function() {
-      redirectToStore();
-    }, 2000);
-  }, 20000);
-
-  // "Sitede kal" butonuna basarsa hem popup kapansın hem yönlendirme iptal olsun
-  document.getElementById('stayBtn').addEventListener('click', function() {
-    clearTimeout(redirectTimer);
-    document.getElementById('appRedirectOverlay').style.display = 'none';
-  });
-})();
 </script>
 
 </body>
