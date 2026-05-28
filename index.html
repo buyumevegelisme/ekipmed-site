@@ -1,3 +1,10 @@
+İstediğin tüm güncellemeleri yaptım. "Neler Sunuyoruz?" kartını, gizlilik politikasının altındaki "EkipMed Platformu" yazısını ve akordiyon menüdeki kurumsal detayları tamamen kaldırdım.
+
+Gönderdiğin yeni logoyu favicon, ana sayfa kartı ve yönlendirme popup'ı dahil olmak üzere her yere ekledim. Kayan arka plan görsellerini de verdiğin 6 yeni EkipMed ekran görüntüsüyle güncelledim.
+
+İşte `index.html` için kopyalayıp yapıştırabileceğin eksiksiz son hali:
+
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -23,8 +30,7 @@
   <title>EkipMed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
 
-  <!-- TODO: EkipMed Favicon Logosu buraya gelecek -->
-  <link rel="icon" type="image/png" href="https://i.hizliresim.com/b9pkx8v.png?v=3">
+  <link rel="icon" type="image/png" href="https://i.hizliresim.com/7hkw84p.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -247,53 +253,6 @@
       display: block;
     }
 
-    .feature-card {
-      background: #ffffff;
-      border-radius: 35px;
-      padding: 25px 20px;
-      margin-top: 20px;
-      box-shadow: 0 20px 40px rgba(13, 71, 161, 0.08);
-      border: 1px solid rgba(13, 71, 161, 0.05);
-      text-align: center;
-    }
-
-    .feature-card h4 {
-      margin: 0 0 15px 0; 
-      font-size: 15px;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .feature-btn {
-      background: #ffffff;
-      border: 1.5px solid #e0e0e0;
-      border-radius: 16px;
-      padding: 14px 10px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 12px;
-      color: #333;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-    }
-
-    .feature-btn:hover {
-      border-color: #0d47a1;
-      color: #0d47a1;
-      background: #f0f4f8;
-      transform: translateY(-1px);
-    }
-
     .disclaimer {
       margin: 20px 0 10px 0;
       font-size: 10px;
@@ -304,18 +263,10 @@
       z-index: 10;
     }
 
-    .ad-note {
-      font-size: 8px;
-      color: #999;
-      text-align: center;
-      margin-top: 3px;
-    }
-
     details summary::-webkit-details-marker { display:none; }
     details summary { list-style: none; outline: none; }
   </style>
 
-  <!-- TODO: Google Analytics ID'nizi buraya girebilirsiniz veya kaldırabilirsiniz -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y24DC6RP3C"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -345,20 +296,20 @@ function redirectToStore() {
 EkipMed sağlık profesyonelleri için neler yapabilir? ✨
 </div>
 
-<!-- Arka planda kayan görseller (EkipMed ekran görüntüleriyle güncelleyebilirsiniz) -->
 <div class="bg-container bg-images">
   <div class="bg-row">
     <div class="marquee-inner">
-      <img src="https://i.hizliresim.com/h10xghx.png"><img src="https://i.hizliresim.com/rgw4ji5.png"><img src="https://i.hizliresim.com/c7bja0o.png"><img src="https://i.hizliresim.com/92z511w.png"><img src="https://i.hizliresim.com/4wdx0ob.png"><img src="https://i.hizliresim.com/2pji5w1.png"><img src="https://i.hizliresim.com/ilalwr9.png">
-      <img src="https://i.hizliresim.com/h10xghx.png"><img src="https://i.hizliresim.com/rgw4ji5.png"><img src="https://i.hizliresim.com/c7bja0o.png"><img src="https://i.hizliresim.com/92z511w.png"><img src="https://i.hizliresim.com/4wdx0ob.png"><img src="https://i.hizliresim.com/2pji5w1.png"><img src="https://i.hizliresim.com/ilalwr9.png">
+      <img src="https://i.hizliresim.com/34pqxpp.png"><img src="https://i.hizliresim.com/24c1sks.png"><img src="https://i.hizliresim.com/qx0l6v0.png"><img src="https://i.hizliresim.com/evf11b9.png"><img src="https://i.hizliresim.com/ot7ae2o.png"><img src="https://i.hizliresim.com/1jh62v1.png">
+      <img src="https://i.hizliresim.com/34pqxpp.png"><img src="https://i.hizliresim.com/24c1sks.png"><img src="https://i.hizliresim.com/qx0l6v0.png"><img src="https://i.hizliresim.com/evf11b9.png"><img src="https://i.hizliresim.com/ot7ae2o.png"><img src="https://i.hizliresim.com/1jh62v1.png">
+      <img src="https://i.hizliresim.com/34pqxpp.png"><img src="https://i.hizliresim.com/24c1sks.png"><img src="https://i.hizliresim.com/qx0l6v0.png"><img src="https://i.hizliresim.com/evf11b9.png"><img src="https://i.hizliresim.com/ot7ae2o.png"><img src="https://i.hizliresim.com/1jh62v1.png">
     </div>
   </div>
 </div>
 
 <div class="container">
   <div class="card">
-    <!-- TODO: EkipMed Logosunu buraya yükleyin -->
-    <img src="https://i.hizliresim.com/b9pkx8v.png?v=3" alt="EkipMed Logo" class="logo" />
+    
+    <img src="https://i.hizliresim.com/7hkw84p.png" alt="EkipMed Logo" class="logo" />
     <div class="app-container">
         <h1 class="app-name">EkipMed</h1>
         
@@ -377,62 +328,22 @@ EkipMed sağlık profesyonelleri için neler yapabilir? ✨
     </div>
 
     <a href="#" onclick="redirectToStore()">
-      <!-- TODO: EkipMed tanıtım görseli yerleştirilebilir -->
       <img class="main-image" src="https://cmsphoto.ww-cdn.com/superstatic/41269/art/grande/5297951-7905525.jpg?v=1558361891.4011235" alt="EkipMed Banner" />
     </a>
 
     <div class="footer">
-      <!-- TODO: EkipMed kurumsal instagram veya mail adresi -->
       <a href="https://www.instagram.com/lavliapp" target="_blank" class="contact-link">📧 Destek ve İletişim</a>
     </div>
   </div>
 
-  <!-- Yenilenen Özellik Kartları -->
-  <div class="feature-card">
-    <h4>Neler Sunuyoruz? 🥰</h4>
-    <div class="feature-grid">
-      <a href="#" onclick="openDialog()" class="feature-btn">Birim Oluşturma &<br>Ekip Uyumu</a>
-      <a href="#" onclick="openDialog()" class="feature-btn">Mesai & Nöbet<br>Takip Sistemi</a>
-      <a href="#" onclick="openDialog()" class="feature-btn">Ana Ekran<br>Çalışma Planı</a>
-      <a href="#" onclick="openDialog()" class="feature-btn">İlaç & Doz<br>Hesaplamaları</a>
-      <a href="#" onclick="openDialog()" class="feature-btn">Özlük Bilgileri<br>Yönetimi</a>
-      <a href="#" onclick="openDialog()" class="feature-btn">Maaş & Hak ediş<br>Hesaplama</a>
-    </div>
-  </div>
 </div>
 
 <div class="disclaimer">
 Bu sitede ve uygulamada yer alan araçlar sağlık çalışanlarına asistanlık etmek amacıyla geliştirilmiştir. Klinik kararlarda resmi protokolleri esas alınız.
-<!-- TODO: Gizlilik politikası linkini güncelleyin -->
 <a href="https://lavliapp.com/privacy/" target="_blank" class="privacy-link">Gizlilik Politikası</a>
-<div class="ad-note">EkipMed Platformu</div>
 
-<details style="margin-top: 15px;">
-  <summary style="font-size: 9px; color: #0d47a1; cursor: pointer; opacity: 0.8; font-weight: bold;">EkipMed Platformu Hakkında Kurumsal Detaylar...</summary>
-  <div style="margin-top: 20px; border-top: 1px dashed rgba(13,71,161,0.2); padding-top: 15px; text-align: justify; max-width: 380px;">
-    <p style="font-size: 10px; color: #0d47a1; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;">EkipMed Ekosistemi</p>
-    <p style="font-size: 9px; color: #444; line-height: 1.5; margin-bottom: 10px; opacity: 0.9;">
-      EkipMed, sağlık sektöründe dinamik ve yoğun çalışma temposuna sahip profesyoneller (hemşireler, doktorlar, teknisyenler ve tüm sağlık personelleri) için özel olarak tasarlanmış interaktif bir yönetim ve asistanlık platformudur. Sistemimiz; karmaşık nöbet döngülerini, birim içi koordinasyonu, personeller arası çalışma uyumunu ve günlük klinik hesaplamaları dijitalleştirerek hata payını minimuma indirmeyi hedefler. Modern hastane dinamiklerine ve kullanıcı deneyimine sadık kalınarak geliştirilen altyapımız, her sağlık çalışanının cebinde taşıyacağı güvenilir bir iş arkadaşı olma vizyonuna sahiptir.
-    </p>
-
-    <p style="font-size: 10px; color: #0d47a1; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;">Yasal Sorumluluk Reddi</p>
-    <p style="font-size: 9px; color: #555; line-height: 1.5; margin-bottom: 10px; opacity: 0.85; font-style: italic;">
-      ÖNEMLİ UYARI: EkipMed modülleri içerisinde yer alan ilaç hesaplama algoritmaları, dozajlama asistanı, maaş/mesai istatistikleri ve nöbet planlama şablonları yalnızca "yardımcı ve kolaylaştırıcı veri" sunma amaçlıdır. Uygulama içerisindeki hiçbir hesaplama tıbbi bir direktif veya kesin yasal mevzuat hükmü taşımamaktadır. İlaç uygulamalarında hastane ve Sağlık Bakanlığı protokolleri, hasta güvenliği kuralları önceliklidir. EkipMed, hesaplama araçlarının kullanımından doğabilecek olası insani/sistemsel sapmalardan ötürü doğrudan veya dolaylı hukuki sorumluluk kabul etmemektedir.
-    </p>
-
-    <div style="font-size: 9px; color: #333; background: rgba(13,71,161,0.05); padding: 10px; border-radius: 12px; border: 1px solid rgba(13,71,161,0.1);">
-      <strong style="display: block; margin-bottom: 3px; color: #0d47a1;">Kurumsal İletişim:</strong>
-      Geri bildirim ve kurumsal entegrasyon talepleriniz için: 
-      <!-- TODO: Resmi mail adresi -->
-      <a href="mailto:buyumevegelisme@gmail.com" style="color: #0d47a1; text-decoration: underline; font-weight: 600;">buyumevegelisme@gmail.com</a>
-      <br><br>
-      © 2026 EkipMed Dijital Sağlık Asistanı I Tüm Hakları Saklıdır.
-    </div>
-  </div>
-</details>
 </div>
 
-<!-- Özellik Detay Popup (Modal) -->
 <div id="featureModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:100; align-items:center; justify-content:center; backdrop-filter: blur(3px);">
   <div style="background:#fff; padding:25px; border-radius:24px; width:85%; max-width:350px; text-align:center; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
     <h3 style="color: #0d47a1; margin-top:0;">EkipMed Özellikleri</h3>
@@ -460,10 +371,9 @@ function closeDialog() {
 }
 </script>
 
-<!-- Uygulama yönlendirme popup -->
 <div id="appRedirectOverlay" style="display:none; position:fixed; inset:0; background:rgba(13,71,161,0.4); z-index:9999; align-items:center; justify-content:center; backdrop-filter: blur(5px);">
   <div style="background:#fff; padding:30px 25px; border-radius:28px; width:85%; max-width:340px; text-align:center; box-shadow:0 20px 60px rgba(13,71,161,0.2);">
-    <img src="https://i.hizliresim.com/b9pkx8v.png?v=3" style="width:70px; height:70px; border-radius:18px; margin-bottom:15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" />
+    <img src="https://i.hizliresim.com/7hkw84p.png" style="width:70px; height:70px; border-radius:18px; margin-bottom:15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" />
     <h3 style="margin:0 0 8px; font-size:18px; font-weight:700; color:#0d47a1;">Mobil uygulamamıza<br>yönlendiriliyorsunuz</h3>
     <p style="font-size:13px; color:#666; margin:0 0 18px;">EkipMed uygulamasına yönlendiriliyorsunuz... 🩺</p>
     <a href="#" onclick="redirectToStore()" 
@@ -499,3 +409,5 @@ function closeDialog() {
 
 </body>
 </html>
+
+```
