@@ -1,1 +1,501 @@
-<h1>Ekipmed</h1>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <script>
+(function() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  function goStore() {
+    if (/android/i.test(userAgent)) {
+      // TODO: EkipMed Android Linki buraya gelecek
+      window.location.replace("https://play.google.com/store/apps/details?id=com.buyumevegelisme.asistan");
+    } else if (/iPhone|iPad|iPod/.test(userAgent)) {
+      // TODO: EkipMed iOS Linki buraya gelecek
+      window.location.replace("https://apps.apple.com/tr/app/id6479564442");
+    }
+  }
+
+  // 0.5 saniye sonra çalış
+  setTimeout(goStore, 500);
+})();
+</script>
+  <meta charset="UTF-8" />
+  <title>EkipMed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+
+  <!-- TODO: EkipMed Favicon Logosu buraya gelecek -->
+  <link rel="icon" type="image/png" href="https://i.hizliresim.com/b9pkx8v.png?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    #navbar-iframe, .navbar, .header-outer, .nav-bar {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+    }
+
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      /* Mavi ve turuncu dokunuşlu, temiz beyaz/açık gri arka plan */
+      background: linear-gradient(135deg, #f4f7f6 0%, #e9f0f8 50%, #fff3e0 100%);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .bg-container {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      opacity: 0.4; /* Beyaz tema üzerinde görsellerin çok göz yormaması için opacity düşürüldü */
+      pointer-events: none;
+    }
+
+    .bg-row {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      user-select: none;
+    }
+
+    .marquee-inner {
+      display: flex;
+      width: max-content;
+      animation: scroll 60s linear infinite;
+    }
+
+    .bg-images img {
+      width: 280px; 
+      height: auto;
+      margin: 0 20px;
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-33.333%); }
+    }
+
+    .top-title {
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0d47a1; /* Medikal Mavi */
+      cursor: pointer;
+      z-index: 20;
+      text-align: center;
+      padding: 10px 20px;
+      background: rgba(13, 71, 161, 0.1);
+      border: 1px solid rgba(13, 71, 161, 0.2);
+      border-radius: 15px;
+      transition: all 0.2s ease;
+    }
+
+    .top-title:hover {
+      background: rgba(13, 71, 161, 0.15);
+    }
+
+    .container {
+      width: 92%;
+      max-width: 400px;
+      z-index: 10;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 35px;
+      padding: 30px 20px;
+      box-shadow: 0 25px 50px rgba(13, 71, 161, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .logo {
+      width: 85px;
+      height: 85px;
+      margin-bottom: 15px;
+      border-radius: 22px;
+      box-shadow: 0 8px 25px rgba(13, 71, 161, 0.15);
+    }
+
+    .app-name {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: #0d47a1; /* Medikal Mavi */
+    }
+
+    .tagline {
+      font-size: 14px;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .highlight {
+      color: #e65100; /* Canlı Turuncu */
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 20px;
+      background: #f0f4f8;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .store-btn {
+      flex: 1;
+      text-decoration: none;
+      padding: 14px 2px;
+      border-radius: 15px;
+      font-weight: 700;
+      font-size: 12px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0d47a1; /* Mavi Buton */
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 15px rgba(13, 71, 161, 0.2);
+    }
+
+    .store-btn:hover {
+      background-color: #1565c0;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13, 71, 161, 0.3);
+    }
+
+    /* İkinci butonun turuncu olması için alternatif stil */
+    .store-btn.orange-btn {
+      background-color: #e65100;
+      box-shadow: 0 4px 15px rgba(230, 81, 0, 0.2);
+    }
+    .store-btn.orange-btn:hover {
+      background-color: #f57c00;
+      box-shadow: 0 6px 20px rgba(230, 81, 0, 0.3);
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 20px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .main-image:hover {
+      transform: scale(1.02);
+    }
+
+    .footer {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-link {
+      text-decoration: none;
+      background: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      padding: 12px;
+      border-radius: 12px;
+      color: #0d47a1;
+      font-weight: 600;
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+    .contact-link:hover {
+      background: #f0f4f8;
+    }
+
+    .privacy-link {
+      color: #999;
+      font-size: 11px;
+      text-decoration: none;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 35px;
+      padding: 25px 20px;
+      margin-top: 20px;
+      box-shadow: 0 20px 40px rgba(13, 71, 161, 0.08);
+      border: 1px solid rgba(13, 71, 161, 0.05);
+      text-align: center;
+    }
+
+    .feature-card h4 {
+      margin: 0 0 15px 0; 
+      font-size: 15px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .feature-btn {
+      background: #ffffff;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 14px 10px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 12px;
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    .feature-btn:hover {
+      border-color: #0d47a1;
+      color: #0d47a1;
+      background: #f0f4f8;
+      transform: translateY(-1px);
+    }
+
+    .disclaimer {
+      margin: 20px 0 10px 0;
+      font-size: 10px;
+      color: #666;
+      text-align: center;
+      padding: 0 15px;
+      max-width: 400px;
+      z-index: 10;
+    }
+
+    .ad-note {
+      font-size: 8px;
+      color: #999;
+      text-align: center;
+      margin-top: 3px;
+    }
+
+    details summary::-webkit-details-marker { display:none; }
+    details summary { list-style: none; outline: none; }
+  </style>
+
+  <!-- TODO: Google Analytics ID'nizi buraya girebilirsiniz veya kaldırabilirsiniz -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y24DC6RP3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y24DC6RP3C');
+  </script>
+  <script>
+function redirectToStore() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  if (/android/i.test(userAgent)) {
+    window.location.href = "https://play.google.com/store/apps/details?id=com.buyumevegelisme.asistan";
+  } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    window.location.href = "https://apps.apple.com/tr/app/id6479564442";
+  } else {
+    // masaüstü fallback - Kendi alan adınıza yönlendirecek
+    window.location.href = "https://ekipmed.net";
+  }
+}
+</script>
+</head>
+
+<body>
+
+<div class="top-title" onclick="openDialog()">
+EkipMed sağlık profesyonelleri için neler yapabilir? ✨
+</div>
+
+<!-- Arka planda kayan görseller (EkipMed ekran görüntüleriyle güncelleyebilirsiniz) -->
+<div class="bg-container bg-images">
+  <div class="bg-row">
+    <div class="marquee-inner">
+      <img src="https://i.hizliresim.com/h10xghx.png"><img src="https://i.hizliresim.com/rgw4ji5.png"><img src="https://i.hizliresim.com/c7bja0o.png"><img src="https://i.hizliresim.com/92z511w.png"><img src="https://i.hizliresim.com/4wdx0ob.png"><img src="https://i.hizliresim.com/2pji5w1.png"><img src="https://i.hizliresim.com/ilalwr9.png">
+      <img src="https://i.hizliresim.com/h10xghx.png"><img src="https://i.hizliresim.com/rgw4ji5.png"><img src="https://i.hizliresim.com/c7bja0o.png"><img src="https://i.hizliresim.com/92z511w.png"><img src="https://i.hizliresim.com/4wdx0ob.png"><img src="https://i.hizliresim.com/2pji5w1.png"><img src="https://i.hizliresim.com/ilalwr9.png">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <!-- TODO: EkipMed Logosunu buraya yükleyin -->
+    <img src="https://i.hizliresim.com/b9pkx8v.png?v=3" alt="EkipMed Logo" class="logo" />
+    <div class="app-container">
+        <h1 class="app-name">EkipMed</h1>
+        
+        <p class="tagline">
+            Sağlık çalışanları için en gelişmiş asistan uygulaması. <br>
+            <span class="highlight">Üstelik tamamen ücretsiz! 🩺</span>
+        </p>
+        <nav class="subtitle">
+            Mesai &middot; Nöbet &middot; İlaç Hesaplama &middot; Ekip Uyumu
+        </nav>
+    </div>
+
+    <div class="button-group">
+      <a href="https://play.google.com/store/apps/details?id=com.buyumevegelisme.asistan" target="_blank" class="store-btn">Android için indir</a>
+      <a href="https://apps.apple.com/tr/app/id6479564442" target="_blank" class="store-btn orange-btn">iOS için indir</a>
+    </div>
+
+    <a href="#" onclick="redirectToStore()">
+      <!-- TODO: EkipMed tanıtım görseli yerleştirilebilir -->
+      <img class="main-image" src="https://cmsphoto.ww-cdn.com/superstatic/41269/art/grande/5297951-7905525.jpg?v=1558361891.4011235" alt="EkipMed Banner" />
+    </a>
+
+    <div class="footer">
+      <!-- TODO: EkipMed kurumsal instagram veya mail adresi -->
+      <a href="https://www.instagram.com/lavliapp" target="_blank" class="contact-link">📧 Destek ve İletişim</a>
+    </div>
+  </div>
+
+  <!-- Yenilenen Özellik Kartları -->
+  <div class="feature-card">
+    <h4>Neler Sunuyoruz? 🥰</h4>
+    <div class="feature-grid">
+      <a href="#" onclick="openDialog()" class="feature-btn">Birim Oluşturma &<br>Ekip Uyumu</a>
+      <a href="#" onclick="openDialog()" class="feature-btn">Mesai & Nöbet<br>Takip Sistemi</a>
+      <a href="#" onclick="openDialog()" class="feature-btn">Ana Ekran<br>Çalışma Planı</a>
+      <a href="#" onclick="openDialog()" class="feature-btn">İlaç & Doz<br>Hesaplamaları</a>
+      <a href="#" onclick="openDialog()" class="feature-btn">Özlük Bilgileri<br>Yönetimi</a>
+      <a href="#" onclick="openDialog()" class="feature-btn">Maaş & Hak ediş<br>Hesaplama</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+Bu sitede ve uygulamada yer alan araçlar sağlık çalışanlarına asistanlık etmek amacıyla geliştirilmiştir. Klinik kararlarda resmi protokolleri esas alınız.
+<!-- TODO: Gizlilik politikası linkini güncelleyin -->
+<a href="https://lavliapp.com/privacy/" target="_blank" class="privacy-link">Gizlilik Politikası</a>
+<div class="ad-note">EkipMed Platformu</div>
+
+<details style="margin-top: 15px;">
+  <summary style="font-size: 9px; color: #0d47a1; cursor: pointer; opacity: 0.8; font-weight: bold;">EkipMed Platformu Hakkında Kurumsal Detaylar...</summary>
+  <div style="margin-top: 20px; border-top: 1px dashed rgba(13,71,161,0.2); padding-top: 15px; text-align: justify; max-width: 380px;">
+    <p style="font-size: 10px; color: #0d47a1; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;">EkipMed Ekosistemi</p>
+    <p style="font-size: 9px; color: #444; line-height: 1.5; margin-bottom: 10px; opacity: 0.9;">
+      EkipMed, sağlık sektöründe dinamik ve yoğun çalışma temposuna sahip profesyoneller (hemşireler, doktorlar, teknisyenler ve tüm sağlık personelleri) için özel olarak tasarlanmış interaktif bir yönetim ve asistanlık platformudur. Sistemimiz; karmaşık nöbet döngülerini, birim içi koordinasyonu, personeller arası çalışma uyumunu ve günlük klinik hesaplamaları dijitalleştirerek hata payını minimuma indirmeyi hedefler. Modern hastane dinamiklerine ve kullanıcı deneyimine sadık kalınarak geliştirilen altyapımız, her sağlık çalışanının cebinde taşıyacağı güvenilir bir iş arkadaşı olma vizyonuna sahiptir.
+    </p>
+
+    <p style="font-size: 10px; color: #0d47a1; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;">Yasal Sorumluluk Reddi</p>
+    <p style="font-size: 9px; color: #555; line-height: 1.5; margin-bottom: 10px; opacity: 0.85; font-style: italic;">
+      ÖNEMLİ UYARI: EkipMed modülleri içerisinde yer alan ilaç hesaplama algoritmaları, dozajlama asistanı, maaş/mesai istatistikleri ve nöbet planlama şablonları yalnızca "yardımcı ve kolaylaştırıcı veri" sunma amaçlıdır. Uygulama içerisindeki hiçbir hesaplama tıbbi bir direktif veya kesin yasal mevzuat hükmü taşımamaktadır. İlaç uygulamalarında hastane ve Sağlık Bakanlığı protokolleri, hasta güvenliği kuralları önceliklidir. EkipMed, hesaplama araçlarının kullanımından doğabilecek olası insani/sistemsel sapmalardan ötürü doğrudan veya dolaylı hukuki sorumluluk kabul etmemektedir.
+    </p>
+
+    <div style="font-size: 9px; color: #333; background: rgba(13,71,161,0.05); padding: 10px; border-radius: 12px; border: 1px solid rgba(13,71,161,0.1);">
+      <strong style="display: block; margin-bottom: 3px; color: #0d47a1;">Kurumsal İletişim:</strong>
+      Geri bildirim ve kurumsal entegrasyon talepleriniz için: 
+      <!-- TODO: Resmi mail adresi -->
+      <a href="mailto:buyumevegelisme@gmail.com" style="color: #0d47a1; text-decoration: underline; font-weight: 600;">buyumevegelisme@gmail.com</a>
+      <br><br>
+      © 2026 EkipMed Dijital Sağlık Asistanı I Tüm Hakları Saklıdır.
+    </div>
+  </div>
+</details>
+</div>
+
+<!-- Özellik Detay Popup (Modal) -->
+<div id="featureModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:100; align-items:center; justify-content:center; backdrop-filter: blur(3px);">
+  <div style="background:#fff; padding:25px; border-radius:24px; width:85%; max-width:350px; text-align:center; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+    <h3 style="color: #0d47a1; margin-top:0;">EkipMed Özellikleri</h3>
+<p style="font-size:13px; color: #444; text-align:left; line-height: 1.6;">
+EkipMed, sağlık çalışanlarının tüm iş yükünü tek bir uygulamada organize etmek üzere tasarlandı.<br><br>
+<strong>Mobil uygulamamızda tamamen ücretsiz:</strong><br><br>
+• 👥 <strong>Birim Oluşturma:</strong> Servisini/birimini kur, iş arkadaşlarınla mükemmel uyumu yakala.<br>
+• 📅 <strong>Mesai ve Nöbet Takibi:</strong> Aylık çalışma takvimini hatasız planla, listele.<br>
+• 📊 <strong>Ana Ekran Planı:</strong> Günlük çalışma ve dinlenme döngünü tek bakışta gör.<br>
+• 🧮 <strong>Gelişmiş İlaç Hesaplama:</strong> Doz, cc/saat ve infüzyon hesaplamalarını saniyeler içinde hatasız yap.<br>
+• 🪪 <strong>Özlük Bilgileri:</strong> Derece, kademe ve mesleki belgelerini güvenle arşivle.<br>
+• 🦺 <strong>Maaş Asistanı:</strong> Nöbet ücretleri, taban/teşvik ödemeleri ve maaş detaylarını takip et.<br><br>
+<span style="color: #e65100; font-weight: bold; display:block; text-align:center;">ve birçok özellik.. senin için! ✨</span>
+</p>
+    <button onclick="closeDialog()" style="margin-top:15px; padding:10px 25px; border-radius:12px; border:none; background:#0d47a1; color:white; font-weight: bold; cursor:pointer;">Kapat</button>
+  </div>
+</div>
+
+<script>
+function openDialog() {
+  document.getElementById('featureModal').style.display = 'flex';
+}
+function closeDialog() {
+  document.getElementById('featureModal').style.display = 'none';
+}
+</script>
+
+<!-- Uygulama yönlendirme popup -->
+<div id="appRedirectOverlay" style="display:none; position:fixed; inset:0; background:rgba(13,71,161,0.4); z-index:9999; align-items:center; justify-content:center; backdrop-filter: blur(5px);">
+  <div style="background:#fff; padding:30px 25px; border-radius:28px; width:85%; max-width:340px; text-align:center; box-shadow:0 20px 60px rgba(13,71,161,0.2);">
+    <img src="https://i.hizliresim.com/b9pkx8v.png?v=3" style="width:70px; height:70px; border-radius:18px; margin-bottom:15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" />
+    <h3 style="margin:0 0 8px; font-size:18px; font-weight:700; color:#0d47a1;">Mobil uygulamamıza<br>yönlendiriliyorsunuz</h3>
+    <p style="font-size:13px; color:#666; margin:0 0 18px;">EkipMed uygulamasına yönlendiriliyorsunuz... 🩺</p>
+    <a href="#" onclick="redirectToStore()" 
+       style="display:block; padding:14px; background:linear-gradient(135deg,#0d47a1,#e65100); color:#fff; font-weight:700; font-size:15px; border-radius:14px; text-decoration:none; margin-bottom:10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+   Uygulamayı İndir
+</a>
+    <button id="stayBtn" style="background:none; border:none; color:#999; font-size:13px; cursor:pointer; padding:5px; font-weight: 500;">
+      Hayır, sitede kal
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var redirectTimer;
+
+  // 5 saniye sonra popup aç, ardından 2 saniyede yönlendir
+  setTimeout(function() {
+    document.getElementById('appRedirectOverlay').style.display = 'flex';
+
+    redirectTimer = setTimeout(function() {
+      redirectToStore();
+    }, 2000);
+  }, 20000);
+
+  // "Sitede kal" butonuna basarsa hem popup kapansın hem yönlendirme iptal olsun
+  document.getElementById('stayBtn').addEventListener('click', function() {
+    clearTimeout(redirectTimer);
+    document.getElementById('appRedirectOverlay').style.display = 'none';
+  });
+})();
+</script>
+
+</body>
+</html>
