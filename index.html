@@ -49,7 +49,6 @@
     .marquee-inner {
       display: flex;
       width: max-content;
-      /* Animasyon süresi görsellerin akış hızını belirler */
       animation: scroll 40s linear infinite;
     }
 
@@ -62,7 +61,6 @@
       flex-shrink: 0;
     }
 
-    /* Kusursuz döngü için 2 set görselin tam ortasında başa sarıyoruz */
     @keyframes scroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -255,9 +253,9 @@
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     if (/android/i.test(userAgent)) {
-      window.location.href = "https://play.google.com/store/apps/details?id=com.buyumevegelisme.asistan";
+      window.location.href = "https://play.google.com/store/apps/details?id=com.buyumevegelisme.yavrum";
     } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-      window.location.href = "https://apps.apple.com/tr/app/id6479564442";
+      window.location.href = "https://apps.apple.com/tr/app/ekipmed/id6746462280?l=tr";
     } else {
       window.location.href = "https://ekipmed.net";
     }
@@ -316,7 +314,7 @@ EkipMed sağlık profesyonelleri için neler yapabilir? ✨
     </a>
 
     <div class="footer">
-      <a href="https://www.instagram.com/lavliapp" target="_blank" class="contact-link">📧 Destek ve İletişim</a>
+      <a href="https://www.instagram.com/ekipmedapp" target="_blank" class="contact-link">📧 Destek ve İletişim</a>
     </div>
   </div>
 
